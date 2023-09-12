@@ -15,23 +15,23 @@ The project's main components are organized as follows:
 
 ## CRUD Operations
 
-### Create (POST /api/persons)
+### Read (GET /api/)
+
+The index method retrieves all person records from the database and returns them as JSON. If no records are found, a 404 status response is returned.
+
+### Create (POST /api/)
 
 The create method is used to add a new person to the database. It performs the following steps:
 
 1.  Validates the input data, ensuring that the name is required, a string, and within a character limit.
 2.  Checks if a person with the same name already exists in the database.
-3.  Creates a new person record if the name is unique.
+3.  Creates a new person record if the name doesn't exist.
 
-### Read (GET /api/persons)
-
-The index method retrieves all person records from the database and returns them as JSON. If no records are found, a 404 status response is returned.
-
-### Read Single (GET /api/persons/{id})
+### Read Single (GET /api/{id})
 
 The read method takes an ID as a parameter and retrieves a single person record by that ID. If the person is found, it returns the details in JSON format; otherwise, a 400 status response is returned.
 
-### Update (PUT /api/persons/{id})
+### Update (PUT /api/{id})
 
 The update method updates an existing person's name based on the provided ID. It follows these steps:
 
@@ -39,7 +39,7 @@ The update method updates an existing person's name based on the provided ID. It
 2.  Checks if the new name is unique.
 3.  Updates the name if the person exists; otherwise, returns a 400 status response.
 
-### Delete (DELETE /api/persons/{id})
+### Delete (DELETE /api/{id})
 
 The destroy method deletes a person record based on the provided ID. If the person exists, it is deleted, and a success message is returned. If no person is found, a 400 status response is returned.
 
@@ -58,6 +58,16 @@ To use this CRUD project:
 5.  Configure routes to access the CRUD endpoints defined in the PersonController.
 
 6.  You can then use API client tools (such as Postman or Insomnia) to interact with the CRUD API by making HTTP requests to the defined endpoint
+
+### API Endpoints
+
+    
+    *   GET /api: Retrieve a list of all persons.
+    *   GET /api/id: Retrieve details of a specific person by their name.
+    *   POST /api: Create a new person record.
+    *   PUT /api/id: Update the details of a specific person.
+    *   DELETE /api/id: Delete a person record.
+
 
 ### Additional Notes
 
