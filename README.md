@@ -71,6 +71,10 @@ To use this CRUD project:
 ### Source Code
  [Github Repo](https://github.com/Doopra/crud-api)
 
+ ### UML Diagram
+
+ <p align="center"><img src="public/uml/person-api-plan.png" width="500"></p>
+
 ### Additional Notes
 
 1.  This project assumes that you have a database configured and that the Person model corresponds to a table in your database.
