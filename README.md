@@ -73,7 +73,7 @@ To use this CRUD project:
 
  ### UML Diagram
 
- <p align="center"><img src="public/uml/person-api-plan.png" width="500"></p>
+ <p align="center"><img src="public/uml/api.PNG" width="500"></p>
 
 ### Additional Notes
 
