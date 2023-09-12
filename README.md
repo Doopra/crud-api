@@ -62,12 +62,14 @@ To use this CRUD project:
 ### API Endpoints
 
     
-    *   GET /api: Retrieve a list of all persons.
-    *   GET /api/id: Retrieve details of a specific person by their name.
-    *   POST /api: Create a new person record.
-    *   PUT /api/id: Update the details of a specific person.
-    *   DELETE /api/id: Delete a person record.
+*   GET /api: Retrieve a list of all persons.
+*   GET /api/id: Retrieve details of a specific person by their name.
+*   POST /api: Create a new person record.
+*   PUT /api/id: Update the details of a specific person.
+*   DELETE /api/id: Delete a person record.
 
+### Source Code
+ [Github Repo](https://github.com/Doopra/crud-api)
 
 ### Additional Notes
 
