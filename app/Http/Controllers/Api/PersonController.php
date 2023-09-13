@@ -45,7 +45,7 @@ class PersonController extends Controller
             if ($existingPerson) {
                 return response()->json([
                     
-                    'message' => "Product with the same name already exists",
+                    'message' => "Person with the same name already exists",
                 ], 422);
             } else {
                 // Create the product if it doesn't exist
@@ -57,7 +57,7 @@ class PersonController extends Controller
                 if ($person) {
                     return response()->json([
                         
-                        'message' => "Product created successfully",
+                        'message' => "Person created successfully",
                     ], 200);
                 } else {
                     return response()->json([
@@ -96,9 +96,10 @@ class PersonController extends Controller
     
 
     // update function
-    public function update(Request $request, int $user_id){
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:191|unique:person',
+    public function update(Request $request, int $id){
+        $validator = Validator::make($request->only('name')
+        , [
+            'name' => 'required|string|max:191',
             
         ]);
 
@@ -110,7 +111,7 @@ class PersonController extends Controller
             ], 422);
         } else{
 
-            $person = Person::find($user_id);
+            $person = Person::find($id);
             if($person){
 
                 $person->update([

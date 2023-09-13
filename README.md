@@ -6,13 +6,6 @@ This README provides an overview of a CRUD (Create, Read, Update, Delete) projec
 
 The CRUD project is designed to perform basic operations on a collection of person records, including creating, reading, updating, and deleting individual records. The project utilizes Laravel, a popular PHP framework, to build the API endpoints for these operations.
 
-## Project Structure
-
-The project's main components are organized as follows:
-
-1. Controller: The PersonController class, located in the App\Http\Controllers\Api namespace, contains the methods responsible for handling CRUD operations.
-2. Model: The project uses the Person model, located in the App\Models directory, to interact with the database and represent the person records.
-
 ## CRUD Operations
 
 ### Read (GET /api/)
@@ -43,21 +36,53 @@ The update method updates an existing person's name based on the provided ID. It
 
 The destroy method deletes a person record based on the provided ID. If the person exists, it is deleted, and a success message is returned. If no person is found, a 400 status response is returned.
 
-### Getting Started
+### Prerequisites
 
-To use this CRUD project:
+Before you begin, ensure you have met the following requirements:
 
-1.  Ensure you have Laravel installed on your development environment.
+*   Node.js and npm installed on your machine.
+*   A MongoDB server set up and running (you can use a local or remote instance).
+*   Git installed (for cloning the repository).
 
-2.  Copy the PersonController.php file into your Laravel project's App\Http\Controllers\Api directory.
+### Installation
 
-3.  Define the Person model if not already defined. Ensure it has the necessary database table and fields, including id and name.
+1.  Clone the repository:
 
-4.  Set up your database connection in Laravel's configuration files.
+        git clone https://github.com/Doopra/crud-api.git
 
-5.  Configure routes to access the CRUD endpoints defined in the PersonController.
+2.  Change into the project directory:
 
-6.  You can then use API client tools (such as Postman or Insomnia) to interact with the CRUD API by making HTTP requests to the defined endpoint
+        cd crud-api
+
+3.  Install the required Node.js packages:
+
+        npm install
+
+
+### Configuration
+
+Before running the API, you need to configure the database connection and other settings.
+
+1.  Create a .env file in the project directory:
+
+        touch .env
+
+2.  Open the .env file in a text editor and add the following configuration:
+
+        PORT=3000
+        MONGODB_URI=mongodb://localhost:27017/your-database-name
+
+    The port might vary depending on your system
+    Replace your-database-name with the name of your MongoDB database.
+
+### Running the API
+
+To start the API server, run the following command:
+
+        npm start
+
+The API will be accessible at http://localhost:3000 by default (or the port you specified in the .env file).
+
 
 ### API Endpoints
 
@@ -73,9 +98,6 @@ To use this CRUD project:
 
  ### UML Diagram
 
- <p align="center"><img src="public/uml/api.PNG" width="500"></p>
+ <p align="center"><img src="public/uml/api.PNG" width="800"></p>
 
-### Additional Notes
 
-1.  This project assumes that you have a database configured and that the Person model corresponds to a table in your database.
-2.  You can customize the validation rules and error responses to match your specific project requirements.
