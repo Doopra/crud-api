@@ -41,14 +41,18 @@ The destroy method deletes a person record based on the provided ID. If the pers
 Before you begin, ensure you have met the following requirements:
 
 *   Node.js and npm installed on your machine.
-*   A MongoDB server set up and running (you can use a local or remote instance).
+*   Database (e.g., MySQL, PostgreSQL)
 *   Git installed (for cloning the repository).
+*   PHP (>= 7.4)
+*   Laravel (>= 8.x)
+*   Composer
 
 ### Installation
 
 1.  Clone the repository:
 
         git clone https://github.com/Doopra/crud-api.git
+        
 
 2.  Change into the project directory:
 
@@ -58,30 +62,52 @@ Before you begin, ensure you have met the following requirements:
 
         npm install
 
+4.  Create a .env file by copying the .env.example file and configure your database settings:
 
-### Configuration
+        cp .env.example .env
 
-Before running the API, you need to configure the database connection and other settings.
+    Configure the database config variables as follows:
 
-1.  Create a .env file in the project directory:
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=laravel
+        DB_USERNAME=root
+        DB_PASSWORD=
 
-        touch .env
+5.  Run the migrations:
 
-2.  Open the .env file in a text editor and add the following configuration:
+        php artisan migrate
 
-        PORT=3000
-        MONGODB_URI=mongodb://localhost:27017/your-database-name
+6.  Start the development server:
 
-    The port might vary depending on your system
-    Replace your-database-name with the name of your MongoDB database.
+        php artisan serve
+
+The Laravel API is currently operational at the base URL: {http://localhost:8000}.
+
+
+### Sample Usage
+
+### Fetch the details of a person (Read)
+
+<p align="center"><img src="public/uml/read-person.PNG" width="800"></p>
+
+### Adding a new person (create)
+
+<p align="center"><img src="public/uml/add-person.PNG" width="800"></p>
+
+### Modify the details of an existing person (Update)
+
+<p align="center"><img src="public/uml/update-person.PNG" width="800"></p>
+
+### Delete a person 
+
+<p align="center"><img src="public/uml/delete-person.PNG" width="800"></p>
+
 
 ### Running the API
 
-To start the API server, run the following command:
-
-        npm start
-
-The API will be accessible at http://localhost:3000 by default (or the port you specified in the .env file).
+* The endpoint accepts JSON as input    
 
 
 ### API Endpoints

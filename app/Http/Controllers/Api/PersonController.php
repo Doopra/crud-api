@@ -142,7 +142,7 @@ class PersonController extends Controller
             $person->delete();
             return response()->json([
                 
-                'message' => "Name Deleted Successfully"
+                'message' => "Person Deleted Successfully"
             ], 200);
         } else{
             return response()->json([
